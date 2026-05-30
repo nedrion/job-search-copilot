@@ -1,8 +1,10 @@
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 import { loadCV } from "./cv.js";
-import { loadJobDescription, analyze } from "./analyzer.js";
+import { loadJobDescription } from "./job-parser.js";
 import { generateReport } from "./reporter.js";
+import { loadConfig } from "./config.js";
+import { createMatcher } from "./matchers/factory.js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, "..");
@@ -24,14 +26,17 @@ async function main() {
     ? jobArg
     : join(JOBS_DIR, jobArg);
 
+  const config = loadConfig();
+  const matcher = createMatcher(config);
+
   console.log(`\n📄 Loading CV from: ${CV_PATH}`);
   const cv = await loadCV(CV_PATH);
 
   console.log(`📋 Loading job description from: ${jobPath}`);
   const job = await loadJobDescription(jobPath);
 
-  console.log(`🔍 Analyzing match...\n`);
-  const result = analyze(cv, job);
+  console.log(`🔍 Analyzing match (${matcher.name} matcher)...\n`);
+  const result = await matcher.analyze(cv, job);
 
   console.log(`📊 Match Result for: ${result.jobTitle}`);
   console.log(`   Overall Match:  ${result.overallMatchPercentage}%`);

@@ -3,3 +3,4 @@ dist/
 reports/
 *.log
 .env
+!.env.example

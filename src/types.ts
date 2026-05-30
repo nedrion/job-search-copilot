@@ -1,3 +1,11 @@
+export type MatcherType = "regex" | "llm";
+
+export interface Config {
+  matcher: MatcherType;
+  openaiApiKey?: string;
+  openaiModel?: string;
+}
+
 export interface CV {
   raw: string;
   skills: Skill[];
