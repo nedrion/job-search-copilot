@@ -1,0 +1,20 @@
+# DevOps Engineer — CloudBase Inc.
+
+## Required Skills
+- Kubernetes
+- Terraform
+- AWS
+- Docker
+- Python
+- CI/CD
+
+## Preferred Skills
+- Helm
+- Prometheus
+- ArgoCD
+- Linux
+
+## Responsibilities
+- Manage Kubernetes clusters in production
+- Automate infrastructure provisioning
+- Implement monitoring and alerting

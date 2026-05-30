@@ -1,0 +1,21 @@
+# John Doe — Senior Software Engineer
+
+## Summary
+Experienced full-stack engineer with 8+ years building scalable web applications.
+
+## Skills
+- TypeScript, Node.js, React, PostgreSQL, Docker, AWS, GraphQL, Redis
+
+## Experience
+
+### Senior Software Engineer — TechCorp (2020–Present)
+- Led migration of monolith to microservices on AWS ECS
+- Built real-time data pipeline handling 1M+ events/day
+- Reduced CI pipeline time by 40% via Docker optimization
+
+### Software Engineer — StartupXYZ (2017–2020)
+- Developed React SPA with GraphQL API layer
+- Designed PostgreSQL schema for multi-tenant SaaS product
+
+## Education
+- BSc Computer Science — University of Technology (2013–2017)
