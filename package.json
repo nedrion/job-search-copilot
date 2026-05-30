@@ -1,0 +1,21 @@
+{
+  "name": "job-search-copilot",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Job search copilot that analyzes job descriptions against your CV",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "start": "tsx src/index.ts",
+    "build": "tsc",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/node": "^22.19.19",
+    "tsx": "^4.19.0",
+    "typescript": "^5.7.0"
+  },
+  "engines": {
+    "node": ">=22.0.0"
+  }
+}

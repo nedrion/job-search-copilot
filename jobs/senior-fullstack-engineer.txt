@@ -1,0 +1,21 @@
+# Senior Full-Stack Engineer — Acme Corp
+
+## Required Skills
+- TypeScript
+- React
+- Node.js
+- PostgreSQL
+- Docker
+- AWS
+- GraphQL
+
+## Preferred Skills
+- Redis
+- Kubernetes
+- NestJS
+- Terraform
+
+## Responsibilities
+- Design and implement microservices architecture
+- Mentor junior engineers
+- Participate in on-call rotation
