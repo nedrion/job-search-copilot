@@ -41,6 +41,7 @@ export class LLMMatcher implements MatcherStrategy {
   readonly name = "llm";
 
   constructor(
+    private baseUrl: string,
     private apiKey: string,
     private model: string
   ) {}
@@ -48,7 +49,7 @@ export class LLMMatcher implements MatcherStrategy {
   async analyze(cv: CV, job: JobDescription): Promise<MatchResult> {
     const userPrompt = this.buildPrompt(cv, job);
 
-    const client = new OpenAI({ apiKey: this.apiKey });
+    const client = new OpenAI({ baseURL: this.baseUrl, apiKey: this.apiKey });
 
     const response = await client.chat.completions.create({
       model: this.model,
@@ -57,7 +58,6 @@ export class LLMMatcher implements MatcherStrategy {
         { role: "user", content: userPrompt },
       ],
       temperature: 0.1,
-      response_format: { type: "json_object" },
     });
 
     const content = response.choices[0]?.message?.content;

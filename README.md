@@ -2,7 +2,7 @@
 
 Analyze job descriptions against your CV and get a markdown report with skill match scores, gaps, and CV improvement hints.
 
-Comes with two matching strategies — **regex** (fast, offline, deterministic) and **LLM** (context-aware, semantic matching via OpenAI).
+Comes with two matching strategies — **regex** (fast, offline, deterministic) and **LLM** (context-aware, semantic matching via any OpenAI-compatible local LLM).
 
 ## Setup
 
@@ -54,7 +54,7 @@ You can also pass an absolute path: `npm start -- C:\path\to\job.txt`.
 | Strategy | Env Value | Description |
 |---|---|---|
 | **Regex** (default) | `MATCHER_TYPE=regex` | Fast keyword matching — compares parsed skill lists from CV and job description |
-| **LLM** | `MATCHER_TYPE=llm` | Semantic analysis via OpenAI — understands context, synonyms, and transferable skills |
+| **LLM** | `MATCHER_TYPE=llm` | Semantic analysis via a local LLM (Ollama, LM Studio, etc.) — understands context, synonyms, and transferable skills |
 
 Set the strategy via environment variable:
 
@@ -88,7 +88,7 @@ src/
   matchers/
     matcher.ts          — MatcherStrategy interface
     regex-matcher.ts    — Regex-based strategy
-    llm-matcher.ts      — OpenAI-based strategy
+    llm-matcher.ts      — LLM-based strategy (OpenAI-compatible local endpoint)
     factory.ts          — Creates the right strategy from config
 cvs/                    — Place your cv.txt here
 jobs/                   — Place job description .txt files here

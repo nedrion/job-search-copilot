@@ -1,6 +1,6 @@
 {
   "name": "job-search-copilot",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "description": "AI-powered job search copilot that analyzes job descriptions against your CV",
   "type": "module",
@@ -19,6 +19,7 @@
     "node": ">=22.0.0"
   },
   "dependencies": {
+    "dotenv": "^17.4.2",
     "openai": "^6.39.1"
   }
 }

@@ -2,8 +2,9 @@ export type MatcherType = "regex" | "llm";
 
 export interface Config {
   matcher: MatcherType;
-  openaiApiKey?: string;
-  openaiModel?: string;
+  llmBaseUrl?: string;
+  llmApiKey?: string;
+  llmModel?: string;
 }
 
 export interface CV {
